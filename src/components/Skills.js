@@ -5,13 +5,14 @@ function Skills(props){
     const [input, setInput] = useState();
     const [Skills, setSkills] = useState([]);
     const Add =()=>{
-        console.log(input);
+        // console.log(input);
         if(input){setSkills([...Skills,input])}
         setInput('')
     }
     const Delete = (id)=>{
-        const remove = Skills.filter(Skill=>{
-            return Skill.id != id
+        const remove = Skills.filter(x=>{
+            return x.id !==
+             id
         })
         setSkills(remove)
     }
