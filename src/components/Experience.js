@@ -6,12 +6,15 @@ const Experience = (props) =>{
     const [start,setStart] = useState("");
     const [end,setEnd] = useState("");
 
+    const [address,setAddress] = useState("");
+
     const [all,setAll] = useState ("");
 
     const Add = () =>{
         const details={
             name,
             title,
+            address,
             start,
             end
         }
@@ -23,10 +26,13 @@ const Experience = (props) =>{
         <h1><center>{props.name}</center></h1>
         <form action="">
             <input type="text" placeholder={props.placeholder} required onChange={(e)=>setName(e.target.value)} />
+            {
+                props.name === 'Experience'? <input type="text" placeholder='Address' required onChange={(e)=>setAddress(e.target.value)}/> : null
+            }
             <input type="text" placeholder='Title' required onChange={(e)=>setTitle(e.target.value)}/>
             <input type="date" placeholder='Start Date' required onChange={(e)=>setStart(e.target.value)}/>
             <input type="date" placeholder='End Date' required onChange={(e)=>setEnd(e.target.value)}/>
-
+            
             <button onClick={Add}>Add</button>
 
         </form>

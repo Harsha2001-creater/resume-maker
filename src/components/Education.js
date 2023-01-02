@@ -18,8 +18,12 @@ const Education = () => {
       start,
       end,
     };
-    if(edu){setEdu([...edu, term])}
-    setEdu('')
+    setEdu([...edu, term])
+    setName('')
+    setGpa('')
+    setCourse('')
+    setStart('')
+    setEnd('')
   };
   return (
     <>
@@ -46,13 +50,13 @@ const Education = () => {
         onChange={(e) => setCourse(e.target.value)}
       />
       <input
-        type="text"
+        type="date"
         placeholder="Start Date"
         required
         onChange={(e) => setStart(e.target.value)}
       />
       <input
-        type="text"
+        type="date"
         placeholder="End Date"
         onChange={(e) => setEnd(e.target.value)}
       />
@@ -64,6 +68,11 @@ const Education = () => {
             return(
                 <>
                 <p>{edu.name}</p>
+                <p>{edu.gpa}</p>
+                <p>{edu.course}</p>
+                <p>{edu.start}</p>
+                <p>{edu.end}</p>
+                <hr />
                 </>
             )
          })
